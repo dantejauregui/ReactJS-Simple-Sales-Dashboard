@@ -13,13 +13,22 @@ class TableGeneral extends Component{
 
 
 	render () {
+		//console.log(this.props);
+
+		//const { cod1 } = this.props;
+		const cod1 = this.props.cod;
+
 		return <Table striped>
 			      <Table.Header>
 			        <Table.Row>
 			          <Table.HeaderCell></Table.HeaderCell>
 			          <Table.HeaderCell></Table.HeaderCell>
 			          <Table.HeaderCell>Monto</Table.HeaderCell>
-			          <Table.HeaderCell>Nro Pedido</Table.HeaderCell>
+
+
+			          <Table.HeaderCell>{this.props.cod}</Table.HeaderCell>
+
+
 			          <Table.HeaderCell>Cliente</Table.HeaderCell>
 			          <Table.HeaderCell>Marca</Table.HeaderCell>
 			          <Table.HeaderCell>Tarjeta</Table.HeaderCell>
@@ -31,8 +40,8 @@ class TableGeneral extends Component{
 
 			      <Table.Body>
 			        
-			        <TableDetail props/>
-			        <TableDetail props/>
+			        <TableDetail cod2={ cod1 } />
+			       
 			        
 			      </Table.Body>
 			    </Table>

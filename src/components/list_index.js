@@ -11,23 +11,68 @@ import {fetchData} from '../actions/index';
 class ListIndex extends Component {
   componentWillMount(){
 		this.props.fetchData();
+		
   };
 
   render() {
 
-  	//Nao entendo esto:
+  	
   	console.log(this.props.posts.data);
   	
-  	//let data = this.props.posts.data;
+  	let data = this.props.posts.data;
 
-  	// if (data) {
-  	// 	console.log(data[0].amount);
-  	// }
+  	let monto = function () {if (data) {
+  		console.log(data.map(m => m.amount));
+  	}
+  }
+
+  	//probando lo que aprendi en UDEMY para preparar el envio por PROPs:
+  	let codReferencia = "dante";
+  // 	function () {if (data) {
+  // 		data.map(cod => <Table.HeaderCell key={cod.id}>{cod.reference_code}</Table.HeaderCell>);
+  // 	}
+  // }
+
+  	let cliente = function () {if (data) {
+  		return data.map(cl => `${cl.client.first_name} ${cl.client.last_name}`);
+  	}
+  }
+
+  	let marca = function () {if (data) {
+  		console.log(data.map(marc => marc.token.iin.brand));
+  	}
+  }
+
+  	let tarjeta = function () {if (data) {
+  		console.log(data.map(t => t.token.card_number));
+  	}
+  }
+
+  	let estado = function () {if (data) {
+  		console.log(data.map(e => e.state));
+  	}
+  }
+
+  	//help translating milliseconds date to normal date:
+  	let fecha = function () {if (data) {
+  		console.log(data.map(f => f.date));
+  	}
+  }
+
+  	//convertir si es NULL a un simbolo de 0% de fraude:
+  	let fraude = function () {if (data) {
+  		console.log(data.map(fr => fr.fraud_score));
+  	}
+  }
+  	
+
+
+
 
     return ( <Container>
 			      <HeaderBar />
 			      <ResultsBar />
-			      <TableGeneral />
+			      <TableGeneral cod={codReferencia} dante={cliente}/>
       		 </Container>
     );
   }
