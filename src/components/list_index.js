@@ -15,16 +15,17 @@ class ListIndex extends Component {
   };
 
   render() {
-
   	
-  	console.log(this.props.posts.data);
+  	//console.log(this.props.posts.data);
   	
   	let data = this.props.posts.data;
 
   	let monto = function () {if (data) {
-  		console.log(data.map(m => m.amount));
+  		return data.map(m => {return `<Table.Cell key=${m.id} > ${m.amount} </Table.Cell>`});
   	}
   }
+    //console.log(monto);
+
 
   	//probando lo que aprendi en UDEMY para preparar el envio por PROPs:
   	let codReferencia = "dante";
@@ -70,10 +71,10 @@ class ListIndex extends Component {
 
 
     return ( <Container>
-			      <HeaderBar />
-			      <ResultsBar />
-			      <TableGeneral cod={codReferencia} dante={cliente}/>
-      		 </Container>
+    			      <HeaderBar />
+    			      <ResultsBar />
+    			      <TableGeneral cod={codReferencia} amount={monto}/>
+      		   </Container>
     );
   }
   

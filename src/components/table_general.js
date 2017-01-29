@@ -2,21 +2,12 @@ import React, {Component} from 'react';
 import { Table } from 'semantic-ui-react';
 import TableDetail from './table_detail';
 
-// import {connect} from 'react-redux';
-// import {bindActionCreators} from 'redux';
-// import {fetchData} from '../actions/index';
-
 class TableGeneral extends Component{
-	// componentWillMount(){
-	// 	this.props.fetchData;
-	// }
-
 
 	render () {
-		//console.log(this.props);
+		console.log(this.props.amount() );
 
-		//const { cod1 } = this.props;
-		const cod1 = this.props.cod;
+		//const cod1 = this.props.cod;
 
 		return <Table striped>
 			      <Table.Header>
@@ -40,20 +31,13 @@ class TableGeneral extends Component{
 
 			      <Table.Body>
 			        
-			        <TableDetail cod2={ cod1 } />
-			       
+			        <TableDetail cod2={this.props.cod} amount2={this.props.amount}/>
+			       	
 			        
 			      </Table.Body>
 			    </Table>
 	};
 }
-
-
-// function mapDispatchToProps (dispatch){
-// 	return bindActionCreators({fetchData}, dispatch);
-// }
-
-// export default connect(null, mapDispatchToProps)(TableGeneral);
 
 
 export default TableGeneral;
