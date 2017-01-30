@@ -5,7 +5,7 @@ import TableDetail from './table_detail';
 class TableGeneral extends Component{
 
 	render () {
-		console.log(this.props.amount() );
+		//console.log(this.props.amount() );
 
 		//const cod1 = this.props.cod;
 
