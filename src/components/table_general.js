@@ -9,33 +9,31 @@ class TableGeneral extends Component{
 
 		//const cod1 = this.props.cod;
 
-		return <Table striped>
-			      <Table.Header>
-			        <Table.Row>
-			          <Table.HeaderCell></Table.HeaderCell>
-			          <Table.HeaderCell></Table.HeaderCell>
-			          <Table.HeaderCell>Monto</Table.HeaderCell>
+		return <div className="row">
+					<div className="table-responsive">
+						<table className="table table-bordered">
+							 <thead>
+								 <tr>
+								   <th></th>
+								   <th></th>
+								   <th>Monto</th>
+								   <th>{this.props.cod}</th>
+								   <th>Cliente</th>
+								   <th>Marca</th>
+								   <th>Tarjeta</th>
+								   <th>Estado</th>
+								   <th>Fecha y Hora</th>
+								   <th>Fraude</th>
+								 </tr>  
+							 </thead>
+							 <tbody>
+							 	<TableDetail cod2={this.props.cod} amount2={this.props.amount}/>
+							 </tbody>
+  						</table>
+					</div>
+			   </div>
 
 
-			          <Table.HeaderCell>{this.props.cod}</Table.HeaderCell>
-
-
-			          <Table.HeaderCell>Cliente</Table.HeaderCell>
-			          <Table.HeaderCell>Marca</Table.HeaderCell>
-			          <Table.HeaderCell>Tarjeta</Table.HeaderCell>
-			          <Table.HeaderCell>Estado</Table.HeaderCell>
-			          <Table.HeaderCell>Fecha y Hora</Table.HeaderCell>
-			          <Table.HeaderCell>Fraude</Table.HeaderCell>
-			        </Table.Row>
-			      </Table.Header>
-
-			      <Table.Body>
-			        
-			        <TableDetail cod2={this.props.cod} amount2={this.props.amount}/>
-			       	
-			        
-			      </Table.Body>
-			    </Table>
 	};
 }
 

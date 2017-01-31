@@ -3,14 +3,19 @@ import { Button, Grid } from 'semantic-ui-react';
 import Buttons from './buttons';
 
 const HeaderBar = () => {
-	return <Grid>
-		    <Grid.Column floated='left' width={5}>
-		      <h1 style={{display: 'inline'}}>Ventas</h1>
-		    </Grid.Column>
-		    <Grid.Column floated='right' width={4}>
-		      <Buttons />	
-		    </Grid.Column>
-		  </Grid>
+	return 	<div className="row">
+				<div style={{padding: 0}} className="pull-left col-md-3">
+					<h1 >Ventas</h1>
+				</div>
+
+				<div className="pull-right col-md-2">
+					<button type="button" className="btn btn-default">Exportar</button>
+					<button type="button" className="btn btn-default">Filtrar</button>
+				</div>
+			</div>
+
+
+
 
 };
 

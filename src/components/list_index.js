@@ -21,7 +21,7 @@ class ListIndex extends Component {
   	let data = this.props.posts.data;
 
   	let monto = function () {if (data) {
-  		return data.map(m => {return `<Table.Cell key=${m.id} > ${m.amount} </Table.Cell>`});
+  		return data.map(m => {return `<td key=${m.id} > ${m.amount} </td>`});
   	}
   }
     //console.log(monto);
@@ -70,11 +70,11 @@ class ListIndex extends Component {
 
 
 
-    return ( <Container>
+    return ( <div className="container">
     			      <HeaderBar />
     			      <ResultsBar />
     			      <TableGeneral cod={codReferencia} amount={monto}/>
-      		   </Container>
+      		   </div>
     );
   }
   
